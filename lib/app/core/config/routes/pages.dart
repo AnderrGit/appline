@@ -1,4 +1,6 @@
 import 'package:appline/app/core/config/routes/routes.dart';
+import 'package:appline/app/modules/auth/presentation/views/login/controller/login_binding.dart';
+import 'package:appline/app/modules/auth/presentation/views/login/login_screen.dart';
 import 'package:appline/app/modules/auth/presentation/views/splash/controllers/splash_binding.dart';
 import 'package:appline/app/modules/auth/presentation/views/splash/splash_screen.dart';
 import 'package:get/get.dart';
@@ -17,12 +19,12 @@ abstract class Pages {
     //   binding: HomeBinding(),
     //   transition: Transition.zoom,
     // ),
-    // GetPage<void>(
-    //   name: Routes.login,
-    //   page: () => const LoginScreen(),
-    //   binding: LoginBinding(),
-    //   transition: Transition.zoom,
-    // ),
+    GetPage<void>(
+      name: Routes.login,
+      page: () => const LoginScreen(),
+      binding: LoginBinding(),
+      transition: Transition.zoom,
+    ),
     // GetPage<void>(
     //   name: Routes.register,
     //   page: () => const RegisterScreen(),
