@@ -3,6 +3,8 @@ import 'package:appline/app/modules/auth/presentation/views/login/controller/log
 import 'package:appline/app/modules/auth/presentation/views/login/login_screen.dart';
 import 'package:appline/app/modules/auth/presentation/views/splash/controllers/splash_binding.dart';
 import 'package:appline/app/modules/auth/presentation/views/splash/splash_screen.dart';
+import 'package:appline/app/modules/home/presentation/views/home/controller/home_binding.dart';
+import 'package:appline/app/modules/home/presentation/views/home/home_screen.dart';
 import 'package:get/get.dart';
 
 abstract class Pages {
@@ -13,12 +15,12 @@ abstract class Pages {
       binding: SplashBinding(),
       transition: Transition.fadeIn,
     ),
-    // GetPage<void>(
-    //   name: Routes.home,
-    //   page: () => const HomeScreen(),
-    //   binding: HomeBinding(),
-    //   transition: Transition.zoom,
-    // ),
+    GetPage<void>(
+      name: Routes.home,
+      page: () => const HomeScreen(),
+      binding: HomeBinding(),
+      transition: Transition.zoom,
+    ),
     GetPage<void>(
       name: Routes.login,
       page: () => const LoginScreen(),

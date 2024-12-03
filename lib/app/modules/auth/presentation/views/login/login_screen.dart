@@ -1,6 +1,8 @@
 import 'package:appline/app/core/design/constants.dart';
 import 'package:appline/app/core/utils/forms/dimiss_keyboard.dart';
 import 'package:appline/app/core/utils/forms/input_field_atom.dart';
+import 'package:appline/app/core/widgets/custom_button.dart';
+import 'package:appline/app/core/widgets/vertical_sizedbox_spacing.dart';
 import 'package:appline/app/modules/auth/presentation/views/login/controller/login_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -80,7 +82,7 @@ class LoginScreen extends GetView<LoginController> {
                   'Por favor ingresa un correo válido',
             },
           ),
-          const SizedBox(height: AppDimensions.verticalSpacing),
+          const VerticalSizedboxSpacing(),
           InputFieldAtom(
             formControlName: 'password',
             label: 'Contraseña',
@@ -92,16 +94,15 @@ class LoginScreen extends GetView<LoginController> {
                   'La contraseña debe tener al menos 6 caracteres',
             },
           ),
-          const SizedBox(height: AppDimensions.verticalSpacing),
+          const VerticalSizedboxSpacing(
+            times: 2,
+          ),
           ReactiveFormConsumer(
             builder: (context, form, child) {
-              return ElevatedButton(
-                onPressed: form.valid ? () => controller.login() : null,
-                style: AppDecorations.primaryButtonStyle,
-                child: Text(
-                  'Iniciar Sesión',
-                  style: AppTextStyles.buttonTextStyle,
-                ),
+              return CustomButton(
+                onPressed: controller.login,
+                text: 'Iniciar Sesión',
+                isEnabled: form.valid,
               );
             },
           ),
