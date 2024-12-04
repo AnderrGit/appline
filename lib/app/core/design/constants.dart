@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 // Colores
 class AppColors {
   static const Color primaryColor =
-      Color(0xFFef2853); // Color del botón 'Registrar'
+      Color(0xFF1e3a5f); // Color del botón 'Registrar'
   static const Color secondaryColor =
       Color(0xFF1e3a5f); // Para bordes y textos secundarios
   static const Color tabColor = Color(0xFFCFD9E9); // Color de las tabs
@@ -18,6 +18,7 @@ class AppColors {
   static const Color redColor = Color(0xFFD32F2F); // Color de error
   static const Color whiteColor = Color(0xFFFFFFFF); // Color blanco
   static const Color greyColor = Color(0xFFA4A4A4); // Color gris
+  static const Color greenColor = Color(0xFF4CAF50); // Color verde
 }
 
 // TextStyles
@@ -50,7 +51,7 @@ class AppTextStyles {
     fontFamily: fontFamily,
     fontSize: headingSize,
     fontWeight: FontWeight.w600,
-    color: AppColors.textPrimaryColor,
+    color: AppColors.whiteColor,
   );
 
   static TextStyle primaryTextStyle = const TextStyle(

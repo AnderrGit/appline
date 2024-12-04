@@ -13,10 +13,12 @@ class HomeScreen extends GetView<OrdersController> {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text(
           'Órdenes Disponibles',
           style: AppTextStyles.appBarTextStyle,
         ),
+        centerTitle: true,
         backgroundColor: AppColors.primaryColor,
       ),
       body: Obx(() {

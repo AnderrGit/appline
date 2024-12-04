@@ -1,5 +1,4 @@
 import 'package:appline/app/modules/home/domain/models/order_model.dart';
-import 'package:appline/app/modules/home/services/show_confirmation_dialog.dart';
 import 'package:get/get.dart';
 
 class OrdersController extends GetxController {
@@ -24,28 +23,15 @@ class OrdersController extends GetxController {
   RxBool isLoading = false.obs;
 
   Future<void> acceptOrder(Order order) async {
-    await confirmOrderAction(order, 'aceptar').then((confirmed) {
-      if (confirmed != null && confirmed) {
-        isLoading(true); // Marca como cargando
-        availableOrders.remove(order);
-        isLoading(false); // Marca como completado
-      }
-    });
+    isLoading(true); // Marca como cargando
+    availableOrders.remove(order);
+    isLoading(false); // Marca como completado
   }
 
   Future<void> declineOrder(Order order) async {
-    await confirmOrderAction(order, 'rechazar').then((confirmed) {
-      if (confirmed != null && confirmed) {
-        isLoading(true); // Marca como cargando
-        availableOrders.remove(order);
-        isLoading(false); // Marca como completado
-      }
-    });
-  }
-
-  Future<bool?> confirmOrderAction(Order order, String action) async {
-    // Implementa la lógica para confirmar la acción de una orden
-    return await showConfirmationDialog(Get.context!, order, action);
+    isLoading(true); // Marca como cargando
+    availableOrders.remove(order);
+    isLoading(false); // Marca como completado
   }
 
   // Ver detalles de una orden

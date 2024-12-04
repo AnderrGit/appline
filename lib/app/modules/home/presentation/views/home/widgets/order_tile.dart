@@ -1,6 +1,9 @@
 import 'package:appline/app/modules/home/domain/models/order_model.dart';
+import 'package:appline/app/modules/home/presentation/views/order_details/order_details_screen.dart';
+import 'package:appline/app/modules/home/services/show_confirmation_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:appline/app/core/design/constants.dart';
+import 'package:get/get.dart';
 import 'swipe_background.dart';
 
 class OrderTile extends StatelessWidget {
@@ -44,12 +47,20 @@ class OrderTile extends StatelessWidget {
                 alignment: Alignment.centerRight,
               ),
               confirmDismiss: (direction) async {
+                return await showConfirmationDialog(
+                  Get.context!,
+                  order,
+                  direction == DismissDirection.startToEnd
+                      ? 'aceptar'
+                      : 'rechazar',
+                );
+              },
+              onDismissed: (direction) {
                 if (direction == DismissDirection.startToEnd) {
                   onAccept();
                 } else {
                   onReject();
                 }
-                return false; // Evita que el `Dismissible` elimine el widget automáticamente
               },
               child: ListTile(
                 title: Text(
@@ -73,6 +84,7 @@ class OrderTile extends StatelessWidget {
                     color: AppColors.secondaryColor),
                 onTap: () {
                   // Navegar a detalles de la orden
+                  Get.to(() => OrderDetailsScreen(order: order));
                 },
               ),
             ),
