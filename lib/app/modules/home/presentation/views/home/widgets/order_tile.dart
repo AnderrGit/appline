@@ -1,5 +1,4 @@
-import 'package:appline/app/modules/home/domain/models/order_model.dart';
-import 'package:appline/app/modules/home/presentation/views/order_details/order_details_screen.dart';
+import 'package:appline/app/modules/home/domain/entities/order_model.dart';
 import 'package:appline/app/modules/home/services/show_confirmation_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:appline/app/core/design/constants.dart';
@@ -10,12 +9,14 @@ class OrderTile extends StatelessWidget {
   final Order order;
   final VoidCallback onAccept;
   final VoidCallback onReject;
+  final VoidCallback onTap;
 
   const OrderTile({
     super.key,
     required this.order,
     required this.onAccept,
     required this.onReject,
+    required this.onTap,
   });
 
   @override
@@ -82,10 +83,7 @@ class OrderTile extends StatelessWidget {
                 ),
                 trailing: const Icon(Icons.arrow_forward_ios,
                     color: AppColors.secondaryColor),
-                onTap: () {
-                  // Navegar a detalles de la orden
-                  Get.to(() => OrderDetailsScreen(order: order));
-                },
+                onTap: onTap,
               ),
             ),
           ],

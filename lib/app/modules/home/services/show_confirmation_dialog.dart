@@ -1,5 +1,5 @@
 import 'package:appline/app/core/design/constants.dart';
-import 'package:appline/app/modules/home/domain/models/order_model.dart';
+import 'package:appline/app/modules/home/domain/entities/order_model.dart';
 import 'package:flutter/material.dart';
 
 Future<bool?> showConfirmationDialog(

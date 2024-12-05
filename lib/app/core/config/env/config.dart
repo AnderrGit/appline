@@ -7,4 +7,7 @@ class Config extends BaseConfig {
 
   @override
   bool get bannerVisibility => dotenv.env['BANNER_VISIBILITY'] == 'true';
+
+  @override
+  String get baseUrl => dotenv.env['DESPACHOS_BASE_URL'] ?? '';
 }

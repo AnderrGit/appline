@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:appline/app/modules/home/domain/models/order_model.dart';
+import 'package:appline/app/modules/home/domain/entities/order_model.dart';
 import 'package:appline/app/modules/home/presentation/controllers/orders_controller.dart';
 import 'package:appline/app/modules/home/services/show_confirmation_dialog.dart';
 import 'package:appline/app/modules/home/services/show_status_snackbar.dart';

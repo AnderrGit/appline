@@ -4,7 +4,7 @@ import 'package:appline/app/modules/home/presentation/views/order_details/contro
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:appline/app/core/design/constants.dart';
-import 'package:appline/app/modules/home/domain/models/order_model.dart';
+import 'package:appline/app/modules/home/domain/entities/order_model.dart';
 
 class OrderDetailsScreen extends StatelessWidget {
   final Order order;

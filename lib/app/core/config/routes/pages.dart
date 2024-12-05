@@ -5,6 +5,8 @@ import 'package:appline/app/modules/auth/presentation/views/splash/controllers/s
 import 'package:appline/app/modules/auth/presentation/views/splash/splash_screen.dart';
 import 'package:appline/app/modules/home/presentation/views/home/controller/home_binding.dart';
 import 'package:appline/app/modules/home/presentation/views/home/home_screen.dart';
+import 'package:appline/app/modules/home/presentation/views/order_history/controller/order_history_binding.dart';
+import 'package:appline/app/modules/home/presentation/views/order_history/order_history_screen.dart';
 import 'package:get/get.dart';
 
 abstract class Pages {
@@ -16,22 +18,23 @@ abstract class Pages {
       transition: Transition.fadeIn,
     ),
     GetPage<void>(
-      name: Routes.home,
-      page: () => const HomeScreen(),
-      binding: HomeBinding(),
-      transition: Transition.zoom,
-    ),
-    GetPage<void>(
       name: Routes.login,
       page: () => const LoginScreen(),
       binding: LoginBinding(),
-      transition: Transition.zoom,
+      transition: Transition.cupertino,
     ),
-    // GetPage<void>(
-    //   name: Routes.register,
-    //   page: () => const RegisterScreen(),
-    //   binding: RegisterBinding(),
-    //   transition: Transition.zoom,
-    // ),
+    GetPage<void>(
+      name: Routes.home,
+      page: () => const HomeScreen(),
+      binding: HomeBinding(),
+      transition: Transition.cupertino,
+    ),
+    // Order History Page
+    GetPage<void>(
+      name: Routes.orderHistory,
+      page: () => const OrderHistoryScreen(),
+      binding: OrderHistoryBinding(),
+      transition: Transition.cupertino,
+    ),
   ];
 }
